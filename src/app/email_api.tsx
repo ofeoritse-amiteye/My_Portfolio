@@ -1,25 +1,29 @@
 import emailjs from "@emailjs/browser";
+import type { NextApiRequest, NextApiResponse } from 'next';
 
-export default async function handler(req : any, res : any) {
-  if (req.method === "POST") {
+
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  if (req.method === 'POST') {
+    const { email, message } = req.body;
+
+    const serviceID = process.env.SERVICE_ID!;
+    const templateID = process.env.TEMPLATE_ID!;
+    const userID = process.env.KEY!;
+
+    const templateParams = {
+      from_email: email,
+      message: message,
+    };
+
     try {
-      const { message, user_email } = req.body;
-
-      const result = await emailjs.send(
-        process.env.SERVICE_ID!,
-        process.env.TEMPLATE_ID!,
-        {
-          message,
-          user_email,
-        },
-        process.env.PUBLIC_KEY!
-      );
-
-      res.status(200).json({ message: "Email sent successfully", result });
+      await emailjs.send(serviceID, templateID, templateParams, userID);
+      res.status(200).json({ message: 'Email sent successfully!' });
     } catch (error) {
-      res.status(500).json({ message: "Failed to send email", error });
+      console.error(error);
+      res.status(500).json({ error: 'Failed to send email' });
     }
   } else {
-    res.status(405).json({ message: "Method not allowed" });
+    res.setHeader('Allow', ['POST']);
+    res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 }
