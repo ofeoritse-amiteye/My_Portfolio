@@ -192,6 +192,9 @@ const AboutPage = () => {
                 </div>
               </div>
             </motion.div>
+            <div className=" flex items-center justify-center">
+              <a href="/RESUME.pdf" download={"resume"}><button className="p-2 rounded-lg ring-1 ring-white bg-slate-600 text-white hover:p-2.5 hover:bg-slate-500">Download resume</button></a>
+            </div >
           </div>
         </div>
         {/* SVG CONTAINER */}
