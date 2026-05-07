@@ -19,6 +19,35 @@ type Project = {
 
 const projects: Project[] = [
   {
+    id: 8,
+    title: "Glance",
+    description:
+      "AI browser extension (2026) that summarizes any page on demand with the Anthropic Claude API, invoked from a Manifest V3 service worker via the Fetch API. Built with declarative content scripts, a popup UI, and a persistent background worker using chrome.storage for session state. Popup and worker stay in sync through chrome.tabs and chrome.runtime.sendMessage, with clear handling when the API misbehaves.",
+    tech: ["Chrome Extension", "Manifest V3", "Vanilla JS", "Claude API", "Service Worker"],
+    status: "completed" as const,
+    link: "#",
+    gradient: "from-violet-500/10 to-purple-500/10",
+    accent: "purple",
+  },
+  {
+    id: 9,
+    title: "Whisper",
+    description:
+      "Secure messaging (2026) with real end-to-end encryption using only the browser Web Crypto API (crypto.subtle)—no third-party crypto libraries. Encrypted-message outbox in IndexedDB for offline resilience; TanStack Query v5 for server sync and Zustand for client/session state. Axios with JWT refresh interceptors plus React Router v7 across auth and chat flows.",
+    tech: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS v4",
+      "Web Crypto API",
+      "IndexedDB",
+    ],
+    status: "completed" as const,
+    link: "#",
+    gradient: "from-emerald-500/10 to-teal-500/10",
+    accent: "green",
+  },
+  {
     id: 1,
     title: "Icampus",
     description:

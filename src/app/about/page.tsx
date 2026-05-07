@@ -6,36 +6,85 @@ import Brain from "@/components/navbar/brain";
 
 const techStack = {
   Frontend: [
-    "HTML",
-    "CSS",
-    "JavaScript",
+    "React 18",
+    "Next.js 16 (App Router)",
+    "React Native (Expo)",
     "TypeScript",
-    "React",
-    "Next.js",
-    "Tailwind CSS",
-    "Bootstrap",
-    "shadcn/ui",
+    "JavaScript (ES6+)",
+    "Tailwind CSS v4",
+    "Radix UI",
+    "HTML5",
+    "CSS3",
   ],
-  Backend: ["Python", "Django", "Node.js", "PHP"],
-  Mobile: ["React Native", "Flutter", "Dart", "Expo"],
-  Databases: ["Firebase", "MongoDB", "MySQL", "PostgreSQL"],
-  "Tools & Deployment": ["Git", "Vercel", "REST APIs"],
+  Backend: [
+    "Node.js",
+    "Django (Python)",
+    "REST APIs",
+    "SSE",
+    "WebSockets",
+    "Prisma ORM",
+    "Axios",
+    "Nodemailer",
+  ],
+  "Data & state": [
+    "MongoDB",
+    "Firebase (Firestore & Auth)",
+    "MySQL",
+    "IndexedDB (idb)",
+    "Zustand",
+    "TanStack Query v5",
+    "React Hook Form",
+    "Zod",
+  ],
+  "Payments & auth": [
+    "Paystack",
+    "JWT (jose)",
+    "bcrypt",
+    "OTP flows",
+    "OAuth-style (Meta / TikTok / X)",
+  ],
+  "Browser & security": [
+    "Chrome Extension APIs (MV3)",
+    "Web Crypto API",
+    "Service Workers",
+    "Vite",
+    "Turbopack",
+    "Rate limiting",
+  ],
+  "AI integration": ["Anthropic Claude API", "LLM prompt engineering", "AI-powered features"],
+  "Infra, monitoring & realtime": [
+    "Cloudflare (CDN & edge)",
+    "Pusher",
+    "Sentry",
+    "PostHog",
+  ],
+  "Tools & platforms": ["Git", "GitHub", "Vercel", "Expo", "VS Code", "Postman", "React Router v7"],
 };
 
 const categoryColors: Record<string, string> = {
   Frontend: "from-blue-500/20 to-cyan-500/20 border-blue-500/30 hover:border-blue-400/60",
   Backend: "from-green-500/20 to-emerald-500/20 border-green-500/30 hover:border-green-400/60",
-  Mobile: "from-purple-500/20 to-violet-500/20 border-purple-500/30 hover:border-purple-400/60",
-  Databases: "from-orange-500/20 to-amber-500/20 border-orange-500/30 hover:border-orange-400/60",
-  "Tools & Deployment": "from-pink-500/20 to-rose-500/20 border-pink-500/30 hover:border-pink-400/60",
+  "Data & state":
+    "from-orange-500/20 to-amber-500/20 border-orange-500/30 hover:border-orange-400/60",
+  "Payments & auth": "from-rose-500/20 to-pink-500/20 border-rose-500/30 hover:border-rose-400/60",
+  "Browser & security":
+    "from-cyan-500/20 to-sky-500/20 border-cyan-500/30 hover:border-cyan-400/60",
+  "AI integration":
+    "from-purple-500/20 to-violet-500/20 border-purple-500/30 hover:border-purple-400/60",
+  "Infra, monitoring & realtime":
+    "from-teal-500/20 to-emerald-500/20 border-teal-500/30 hover:border-teal-400/60",
+  "Tools & platforms": "from-pink-500/20 to-rose-500/20 border-pink-500/30 hover:border-pink-400/60",
 };
 
 const categoryTextColors: Record<string, string> = {
   Frontend: "text-blue-400",
   Backend: "text-green-400",
-  Mobile: "text-purple-400",
-  Databases: "text-orange-400",
-  "Tools & Deployment": "text-pink-400",
+  "Data & state": "text-orange-400",
+  "Payments & auth": "text-rose-400",
+  "Browser & security": "text-cyan-400",
+  "AI integration": "text-purple-400",
+  "Infra, monitoring & realtime": "text-teal-400",
+  "Tools & platforms": "text-pink-400",
 };
 
 const AboutPage = () => {
@@ -289,7 +338,7 @@ const AboutPage = () => {
 
             {/* Resume Button */}
             <div className="flex items-center justify-center pt-4">
-              <a href="/OFE_RESUME.pdf" download="Amiteye_Ofeoritse_Resume">
+              <a href="/AMITEYE_OFEORITSE_RESUME_2026(MAY).pdf" download="Amiteye_Ofeoritse_Resume">
                 <motion.button
                   className="btn-outline flex items-center gap-2"
                   whileHover={{ scale: 1.05 }}
